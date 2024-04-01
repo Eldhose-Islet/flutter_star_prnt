@@ -15,7 +15,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String logText = "";
-  GlobalKey _globalKey = new GlobalKey();
+  GlobalKey _globalKey = GlobalKey();
   bool isLoading = false;
   Widget? widgetToPrint;
   @override
@@ -61,7 +61,7 @@ class _MyAppState extends State<MyApp> {
 
   void findAllPrinterAndSendCommand(PrintCommands commands) async {
     Stopwatch stopwatch = Stopwatch()..start();
-    List<PortInfo> list = await StarPrnt.portDiscovery(StarPortType.USB);
+    List<PortInfo> list = await StarPrnt.portDiscovery(StarPortType.LAN);
     print(list);
     print('Port discovered after ${stopwatch.elapsed} count ${list.length}');
     for (final port in list) {
