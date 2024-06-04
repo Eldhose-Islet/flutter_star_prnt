@@ -185,7 +185,7 @@ class _MyAppState extends State<MyApp> {
             ),
             TextButton(
               onPressed: () async {
-                final img = await _capturePng();
+                // final img = await _capturePng();
                 setState(() {
                   isLoading = true;
                 });
